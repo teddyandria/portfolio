@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Teddy — Machine Learning Engineer</title>
-<meta name="description" content="Machine Learning Engineer. Industrialisation, déploiement et surveillance de modèles en production.">
+<title>Teddy — AI / ML Engineer</title>
+<meta name="description" content="AI / ML Engineer. Industrialisation et surveillance de modèles en production, applications autour des LLM.">
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#FAFAF8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,8 +102,9 @@ section{padding:clamp(3rem,7vw,7rem) 0 0}
 .wip{display:inline-block;font-family:var(--mono);font-size:.66rem;letter-spacing:.09em;
      color:var(--alert);border:1px solid var(--alert);padding:.18em .55em;margin-top:.8rem}
 .stages{list-style:none;margin-top:1.2rem;font-family:var(--mono);font-size:.76rem;
-        line-height:1.95;color:var(--quiet);letter-spacing:-.01em}
-.stages li::before{content:"○";display:inline-block;width:1.5em;color:var(--quiet)}
+        line-height:1.55;color:var(--quiet);letter-spacing:-.01em}
+.stages li{padding-left:1.5em;text-indent:-1.5em;margin-bottom:.45em;max-width:52ch}
+.stages li::before{content:"○";display:inline-block;width:1.5em;text-indent:0;color:var(--quiet)}
 .stages li.done{color:var(--ink)}
 .stages li.done::before{content:"●";color:var(--alert)}
 .soon{display:inline-block;margin-top:1.2rem;font-size:.78rem;font-family:var(--mono);color:var(--quiet)}
@@ -119,23 +120,6 @@ section{padding:clamp(3rem,7vw,7rem) 0 0}
 .diagram svg{width:100%;height:auto;display:block}
 .shot figcaption,.diagram figcaption{font-family:var(--mono);font-size:.7rem;color:var(--quiet);
      margin-top:.7rem;letter-spacing:-.01em}
-
-/* ---------- drift widget ---------- */
-.widget{border:1px solid var(--rule);padding:clamp(1rem,2vw,1.6rem)}
-.readout{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
-         padding-bottom:.9rem;flex-wrap:wrap}
-.psi{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:700;letter-spacing:-.05em;
-     line-height:.9;font-variant-numeric:tabular-nums}
-.psi.hot{color:var(--alert)}
-.band{font-size:.85rem;text-align:right;max-width:16ch;line-height:1.3}
-.plot{width:100%;height:auto;display:block}
-.ctrl{display:flex;align-items:center;gap:1rem;padding-top:1rem;flex-wrap:wrap}
-.ctrl label{font-size:.82rem;color:var(--quiet);white-space:nowrap}
-input[type=range]{flex:1;min-width:140px;accent-color:var(--alert);height:20px;cursor:pointer}
-.legend{display:flex;gap:1.4rem;font-size:.78rem;color:var(--quiet);padding-top:.7rem;flex-wrap:wrap}
-.legend span{display:flex;align-items:center;gap:.45rem}
-.swatch{width:14px;height:8px;border:1px solid var(--ink)}
-.swatch.fill{background:var(--ink)}
 
 /* ---------- skills / formation ---------- */
 .skills{font-size:clamp(1.5rem,4.4vw,3.4rem);font-weight:600;letter-spacing:-.04em;
@@ -174,14 +158,10 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
   .row > div:empty{display:none}
   .contact a{padding:.08em 0}
   .head{font-size:clamp(1.45rem,7.4vw,2.6rem)}
-  input[type=range]{height:24px}
-  .readout{padding-bottom:.6rem}
   footer{gap:.5rem}
 }
 @media (max-width:420px){
   h1{font-size:clamp(2.1rem,11.6vw,3rem);letter-spacing:-.035em}
-  .psi{font-size:2.5rem}
-  .band{text-align:left;max-width:none}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -214,15 +194,15 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
       <rect x="884" y="56"  width="52" height="144" class="hot" fill="#E4341C" style="animation-delay:.65s"/>
     </svg>
     <p class="eyebrow">Teddy Andriamampionona</p>
-    <h1>Machine Learning<br>Engineer</h1>
+    <h1>AI / ML<br>Engineer</h1>
   </div>
 
   <div class="line"></div>
 
   <div class="intro">
     <div>
-      <p>Je travaille sur des modèles de scoring : les entraîner, les mettre en production, et surveiller ce qu'ils font une fois qu'ils y sont.</p>
-      <p class="status">Bordeaux &amp; Paris · Disponible à partir de début octobre 2026</p>
+      <p>Je mets des modèles en production et je surveille ce qu'ils font une fois qu'ils y sont. Modèles de scoring chez Floa, applications autour des LLM à côté.</p>
+      <p class="status">Bordeaux &amp; Paris · Disponible immédiatement</p>
     </div>
     <nav>
       <a href="#projets">Projets</a>, <a href="#experience">Expérience</a>,<br>
@@ -253,39 +233,51 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
   <div class="line"></div>
   <article class="row rise">
     <div>
-      <h3>Drift&nbsp;Watch</h3>
-      <div class="role">Conception, développement, industrialisation</div>
-      <span class="wip">EN COURS</span>
-      <p class="desc">Un modèle de scoring crédit que j'ai pris de bout en bout : entraînement, mise en API, conteneur, puis détection de dérive. Le PSI est codé à la main au lieu d'être importé d'une bibliothèque. Et je fabrique moi-même une dérive dans les données, pour vérifier que le détecteur la voit vraiment, et à partir de quel écart.</p>
+      <h3>Declic</h3>
+      <div class="role">Conception, développement, mise en production</div>
+      <span class="wip">EN PRODUCTION</span>
+      <p class="desc">Une application de révision pour les adolescents neuroatypiques. L'élève importe son cours, l'IA en fait des fiches et des quiz, et l'application lui dit quoi réviser et quand.</p>
       <ul class="stages">
-        <li>Entraînement &amp; pipeline</li>
-        <li>API &amp; conteneur</li>
-        <li>Détection de dérive (PSI)</li>
-        <li>Alerting &amp; runbook</li>
+        <li class="done">Génération par LLM : fiches et quiz (QCM, vrai/faux, textes à trous) en sortie structurée</li>
+        <li class="done">RAG : l'IA s'appuie sur les cours de l'élève, pas sur ce qu'elle croit savoir</li>
+        <li class="done">Jeu d'évaluation : des cours de test et les résultats attendus, rejoués à chaque changement</li>
+        <li class="done">Répétition espacée (FSRS) : chaque fiche revient juste avant d'être oubliée</li>
       </ul>
-      <div class="stack">Python · scikit-learn · FastAPI · Docker</div>
-      <span class="soon">Dépôt public à venir</span>
+      <div class="stack">Python · FastAPI · React · PostgreSQL / PGVector · Docker · Railway</div>
     </div>
-
-    <div class="widget">
-      <span class="try">DÉMO — FAIS GLISSER LE CURSEUR</span>
-      <div class="readout">
-        <div class="psi" id="psi">0.00</div>
-        <div class="band" id="band">Population stable, rien à signaler</div>
-      </div>
-      <svg class="plot" id="plot" viewBox="0 0 400 150" role="img" aria-labelledby="plotTitle">
-        <title id="plotTitle">Distribution de référence comparée à la population courante</title>
+    <figure class="diagram">
+      <svg viewBox="0 0 420 384" role="img" aria-labelledby="dcT dcD">
+        <title id="dcT">Fonctionnement de Declic</title>
+        <desc id="dcD">Cinq étapes : l'élève ajoute son cours, le cours est indexé dans PGVector, le LLM génère fiches et quiz par RAG, contrôlés par un jeu d'évaluation, FSRS planifie les révisions, et les réponses de l'élève ajustent le planning.</desc>
+        <line x1="40" y1="30" x2="40" y2="344" stroke="#000" stroke-width="1"/>
+        <circle cx="40" cy="30" r="5" fill="#FAFAF8" stroke="#000" stroke-width="1.2"/>
+        <text x="52" y="34" font-family="JetBrains Mono, ui-monospace, monospace" font-size="9" fill="#E4341C" letter-spacing=".06em">01</text>
+        <text x="72" y="34" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#000">Ajout du cours</text>
+        <text x="72" y="53" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="12" fill="#6B6B6B">L'élève ajoute son cours dans l'application.</text>
+        <circle cx="40" cy="100" r="5" fill="#FAFAF8" stroke="#000" stroke-width="1.2"/>
+        <text x="52" y="104" font-family="JetBrains Mono, ui-monospace, monospace" font-size="9" fill="#E4341C" letter-spacing=".06em">02</text>
+        <text x="72" y="104" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#000">Indexation</text>
+        <text x="72" y="123" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="12" fill="#6B6B6B">Le cours est découpé et rangé dans PGVector.</text>
+        <circle cx="40" cy="170" r="5" fill="#FAFAF8" stroke="#000" stroke-width="1.2"/>
+        <text x="52" y="174" font-family="JetBrains Mono, ui-monospace, monospace" font-size="9" fill="#E4341C" letter-spacing=".06em">03</text>
+        <text x="72" y="174" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#000">Génération (RAG)</text>
+        <text x="72" y="193" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="12" fill="#6B6B6B">Le LLM retrouve les bons passages, crée fiches et quiz.</text>
+        <circle cx="40" cy="274" r="5" fill="#FAFAF8" stroke="#000" stroke-width="1.2"/>
+        <text x="52" y="278" font-family="JetBrains Mono, ui-monospace, monospace" font-size="9" fill="#E4341C" letter-spacing=".06em">04</text>
+        <text x="72" y="278" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#000">Planification (FSRS)</text>
+        <text x="72" y="297" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="12" fill="#6B6B6B">Chaque fiche est programmée juste avant l'oubli.</text>
+        <circle cx="40" cy="344" r="6" fill="#E4341C"/>
+        <text x="52" y="348" font-family="JetBrains Mono, ui-monospace, monospace" font-size="9" fill="#E4341C" letter-spacing=".06em">05</text>
+        <text x="72" y="348" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#000">Révision</text>
+        <text x="72" y="367" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="12" fill="#6B6B6B">L'élève répond ; ses réponses ajustent le planning.</text>
+        <rect x="72" y="206" width="330" height="34" fill="none" stroke="#E4341C" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="82" y="220" font-family="JetBrains Mono, ui-monospace, monospace" font-size="9" fill="#E4341C" letter-spacing=".06em">CONTRÔLE QUALITÉ</text>
+        <text x="82" y="233" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="11.5" fill="#000">Jeu d'évaluation rejoué à chaque changement de prompt</text>
+        <path d="M32,344 C10,344 10,274 29,274" fill="none" stroke="#E4341C" stroke-width="1.3"/>
+        <path d="M29,274 l-6,-4 M29,274 l-6,4" stroke="#E4341C" stroke-width="1.3" fill="none"/>
       </svg>
-      <div class="ctrl">
-        <label for="shift">Décalage de population</label>
-        <input type="range" id="shift" min="0" max="40" value="0" step="1"
-               aria-describedby="psi">
-      </div>
-      <div class="legend">
-        <span><i class="swatch" aria-hidden="true"></i> Référence</span>
-        <span><i class="swatch fill" aria-hidden="true"></i> Population courante</span>
-      </div>
-    </div>
+      <figcaption>Fonctionnement de Declic, du cours à la révision</figcaption>
+    </figure>
   </article>
 
   <div class="line"></div>
@@ -406,7 +398,7 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
   <div class="line"></div>
   <span class="secnum">04 / COMPÉTENCES</span>
   <h2 class="head">Compétences</h2>
-  <p class="skills rise">MLOps, Dataiku, Python, Docker, CI/CD, Airflow, FastAPI, SQL, Snowflake, RAG, Go, React, PostgreSQL</p>
+  <p class="skills rise">MLOps, LLM, RAG, Python, FastAPI, Docker, CI/CD, Airflow, Dataiku, SQL, Snowflake, PostgreSQL / PGVector, React, Go</p>
 </section>
 
 <section>
@@ -449,89 +441,14 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
 
 <div class="line"></div>
 <footer>
-  <span>Teddy Andriamampionona — Machine Learning Engineer</span>
-  <span>Bordeaux &amp; Paris · Disponible à partir de début octobre 2026</span>
+  <span>Teddy Andriamampionona — AI / ML Engineer</span>
+  <span>Bordeaux &amp; Paris · Disponible immédiatement</span>
 </footer>
 
 </div>
 
 <script>
 (function(){
-  var BINS = 12, LO = 0, HI = 120, FLOOR = 1e-4;
-  var W = 400, H = 150, PADX = 6, PADB = 10, PADT = 8;
-
-  function pdf(x, mu, sd){
-    var z = (x - mu) / sd;
-    return Math.exp(-0.5 * z * z) / sd;
-  }
-  function binned(mu, sd){
-    var w = (HI - LO) / BINS, out = [], sum = 0, i, c, v;
-    for(i = 0; i < BINS; i++){
-      c = LO + w * (i + 0.5);
-      v = pdf(c, mu, sd);
-      out.push(v); sum += v;
-    }
-    for(i = 0; i < BINS; i++){
-      out[i] = Math.max(out[i] / sum, FLOOR);
-    }
-    return out;
-  }
-  function psi(ref, cur){
-    var s = 0, i;
-    for(i = 0; i < BINS; i++){
-      s += (cur[i] - ref[i]) * Math.log(cur[i] / ref[i]);
-    }
-    return s;
-  }
-
-  var REF = binned(50, 14);
-  var plot = document.getElementById('plot');
-  var out  = document.getElementById('psi');
-  var band = document.getElementById('band');
-  var slider = document.getElementById('shift');
-  var title = '<title id="plotTitle">Distribution de référence comparée à la population courante</title>';
-
-  function draw(cur, hot){
-    var bw = (W - PADX * 2) / BINS;
-    var peak = 0, i;
-    for(i = 0; i < BINS; i++){
-      if(REF[i] > peak) peak = REF[i];
-      if(cur[i] > peak) peak = cur[i];
-    }
-    var scale = (H - PADT - PADB) / peak;
-    var s = title;
-    for(i = 0; i < BINS; i++){
-      var x = PADX + i * bw;
-      var hc = cur[i] * scale;
-      var hr = REF[i] * scale;
-      s += '<rect x="' + (x + 1.5).toFixed(1) + '" y="' + (H - PADB - hc).toFixed(1) +
-           '" width="' + (bw - 3).toFixed(1) + '" height="' + hc.toFixed(1) +
-           '" fill="' + (hot ? 'var(--alert)' : 'var(--ink)') + '"/>';
-      s += '<rect x="' + (x + 1.5).toFixed(1) + '" y="' + (H - PADB - hr).toFixed(1) +
-           '" width="' + (bw - 3).toFixed(1) + '" height="' + hr.toFixed(1) +
-           '" fill="none" stroke="var(--ink)" stroke-width="1"/>';
-    }
-    s += '<line x1="' + PADX + '" y1="' + (H - PADB) + '" x2="' + (W - PADX) +
-         '" y2="' + (H - PADB) + '" stroke="var(--ink)" stroke-width="1"/>';
-    plot.innerHTML = s;
-  }
-
-  function update(){
-    var d = +slider.value;
-    var cur = binned(50 + d, 14 + d * 0.12);
-    var v = psi(REF, cur);
-    var hot = v > 0.25;
-    out.textContent = v.toFixed(2);
-    out.className = 'psi' + (hot ? ' hot' : '');
-    band.textContent = v < 0.10 ? 'Population stable, rien à signaler'
-                     : v <= 0.25 ? 'Dérive modérée, on surveille'
-                     : 'Dérive significative, on enquête';
-    draw(cur, hot);
-  }
-
-  slider.addEventListener('input', update);
-  update();
-
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
