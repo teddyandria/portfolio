@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Teddy — AI / ML Engineer</title>
-<meta name="description" content="AI / ML Engineer. Industrialisation et surveillance de modèles en production, applications autour des LLM.">
+<title>Teddy — AI Engineer</title>
+<meta name="description" content="AI Engineer. Agents IA et applications LLM en production, évaluation et surveillance des modèles.">
 <meta name="color-scheme" content="only light">
 <meta name="theme-color" content="#FAFAF8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -123,7 +123,7 @@ section{padding:clamp(3rem,7vw,7rem) 0 0}
 
 /* ---------- skills / formation ---------- */
 .skills{font-size:clamp(1.5rem,4.4vw,3.4rem);font-weight:600;letter-spacing:-.04em;
-        line-height:1.1;padding:clamp(1rem,2vw,1.6rem) 0 clamp(2.4rem,5vw,4rem);max-width:22ch}
+        line-height:1.1;padding:clamp(1rem,2vw,1.6rem) 0 clamp(2.4rem,5vw,4rem);max-width:34ch}
 .formation{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,9fr);
            gap:clamp(1.4rem,4vw,5rem);padding:clamp(1.6rem,3vw,2.6rem) 0 clamp(2.6rem,5vw,4rem)}
 .formation h3{font-size:clamp(1.2rem,2.4vw,1.8rem);font-weight:600;letter-spacing:-.03em}
@@ -141,7 +141,25 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
        font-size:.8rem;color:var(--quiet);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
 .perso{border-left:2px solid var(--alert);padding-left:1rem}
+/* ---------- qui je suis / demos ---------- */
+.qui-intro{max-width:56ch;color:var(--quiet);line-height:1.55;margin-bottom:clamp(1.4rem,3vw,2.4rem)}
+.qui{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(1rem,2vw,1.6rem);padding-bottom:clamp(2rem,4vw,3rem)}
+.tile{margin:0;display:flex;flex-direction:column;gap:.8rem}
+.tile img{width:100%;max-width:100%;aspect-ratio:4/5;object-fit:cover;display:block;background:var(--wash);
+          filter:grayscale(1);transition:filter .5s ease}
+.tile:hover img{filter:none}
+@media (hover:none){.tile img{filter:none}}
+.tile .emo{width:100%;aspect-ratio:4/3;display:grid;place-items:center;background:var(--wash);font-size:clamp(2.8rem,5.5vw,4.4rem);line-height:1;transition:transform .4s ease}
+.tile:hover .emo{transform:translateY(-4px)}
+.tile h3{font-size:clamp(1.05rem,1.6vw,1.3rem);font-weight:600;letter-spacing:-.02em}
+.tile p{color:var(--quiet);line-height:1.5;font-size:.92rem;margin-top:.3rem}
+.demo{margin:0 0 clamp(1.8rem,3.5vw,3rem);border:1px solid var(--rule)}
+.demo video{width:100%;max-width:100%;display:block;aspect-ratio:16/9;background:var(--wash);object-fit:cover}
+.demo figcaption{font-family:var(--mono);font-size:.7rem;color:var(--quiet);padding:.6rem .8rem;border-top:1px solid var(--rule)}
+@media (max-width:860px){.qui{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
 .colophon{font-family:var(--mono);font-size:.72rem;letter-spacing:-.01em;flex-basis:100%}
+.job-meta{font-family:var(--mono);font-size:.82rem;color:var(--quiet);letter-spacing:-.01em;margin:-.8rem 0 clamp(1.4rem,2.6vw,2.2rem)}
 .status{margin-top:.9rem;color:var(--quiet);font-size:.8rem;font-family:var(--mono);letter-spacing:-.01em}
 
 .rise{opacity:0;transform:translateY(14px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
@@ -194,18 +212,19 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
       <rect x="884" y="56"  width="52" height="144" class="hot" fill="#E4341C" style="animation-delay:.65s"/>
     </svg>
     <p class="eyebrow">Teddy Andriamampionona</p>
-    <h1>AI / ML<br>Engineer</h1>
+    <h1>AI<br>Engineer</h1>
   </div>
 
   <div class="line"></div>
 
   <div class="intro">
     <div>
+      <p>Je mets des modèles et des agents IA en production, et je mesure ce qu'ils font une fois qu'ils y sont. Modèles de scoring chez Floa, agents et applications LLM sur mes projets.</p>
       <p class="status">Bordeaux &amp; Paris · Disponible immédiatement</p>
     </div>
     <nav>
-      <a href="#projets">Projets</a>, <a href="#experience">Expérience</a>,<br>
-      <a href="cv_teddy.pdf">CV</a>, <a href="#contact">Contact</a>,<br>
+      <a href="#qui">Qui je suis</a>, <a href="#projets">Projets</a>,<br><a href="#experience">Expérience</a>, 
+      <a href="cv_teddy.pdf">CV</a>,<br><a href="#contact">Contact</a>, 
       <a href="https://www.linkedin.com/in/teddy-andriamampionona">LinkedIn</a>, <a href="https://github.com/teddyandria">GitHub</a>
     </nav>
   </div>
@@ -215,18 +234,42 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
 
 <section class="about rise">
   <div class="about-text">
-    <p>Machine Learning Engineer, je fais passer les modèles et les applications IA du prototype à la production.</p>
-    <p>Fort de 3 ans d'expérience en développement logiciel et en Machine Learning, j'interviens sur l'ensemble du cycle de vie d'un modèle : expérimentation, industrialisation, déploiement et exploitation. J'accorde une attention particulière au suivi en production : versioning, traçabilité, détection de dérive des données et alertes. J'applique au ML les standards du développement : code testé, versionné, documenté et maintenable par l'équipe.</p>
-    <p class="perso">Centres d'intérêt : piano, guitare, photographie, boxe anglaise.</p>
+    <p>AI Engineer, je fais passer les modèles, les agents et les applications IA du prototype à la production.</p>
+    <p>Fort de 3 ans d'expérience en développement logiciel et en Machine Learning, j'interviens sur l'ensemble du cycle de vie d'un modèle : expérimentation, industrialisation, déploiement et exploitation. J'accorde une attention particulière au suivi en production : versioning, traçabilité, détection de dérive des données et alertes. J'applique au ML les standards du développement : code testé, versionné, documenté et maintenable par l'équipe. Côté IA générative, je construis des agents et des applications LLM, et je mesure s'ils marchent avec des jeux d'évaluation et des traces.</p>
   </div>
   <figure class="portrait">
     <img src="teddy.jpg" alt="Portrait de Teddy Andriamampionona" loading="lazy" width="1000" height="1250" onerror="this.closest('figure').remove()">
   </figure>
 </section>
 
+<section id="qui">
+  <div class="line"></div>
+  <span class="secnum">01 / QUI JE SUIS</span>
+  <h2 class="head">Qui je suis</h2>
+  <p class="qui-intro rise">Mon parcours, et ce qui me tient à cœur en dehors du code.</p>
+  <div class="qui rise">
+    <figure class="tile">
+      <div class="emo" aria-hidden="true">💻</div>
+      <figcaption><h3>Développeur avant tout</h3><p>Le développement me passionne : je code tous les jours, au travail comme sur mes projets perso.</p></figcaption>
+    </figure>
+    <figure class="tile">
+      <div class="emo" aria-hidden="true">📷</div>
+      <figcaption><h3>Photographie</h3><p>Photo et montage vidéo, sur mon temps libre.</p></figcaption>
+    </figure>
+    <figure class="tile">
+      <div class="emo" aria-hidden="true">🎹</div>
+      <figcaption><h3>Piano et guitare</h3><p>Mes deux instruments.</p></figcaption>
+    </figure>
+    <figure class="tile">
+      <div class="emo" aria-hidden="true">🥊</div>
+      <figcaption><h3>Boxe anglaise</h3><p>Plusieurs années de pratique.</p></figcaption>
+    </figure>
+  </div>
+</section>
+
 <section id="projets">
   <div class="line"></div>
-  <span class="secnum">01 / PROJETS</span>
+  <span class="secnum">02 / PROJETS</span>
   <h2 class="head">Projets</h2>
 
   <div class="line"></div>
@@ -235,7 +278,7 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
       <h3>Declic</h3>
       <div class="role">Conception, développement, mise en production</div>
       <span class="wip">EN PRODUCTION</span>
-      <p class="desc">Une application de révision pour les adolescents neuroatypiques. L'élève prend son cours en photo ou colle le texte, l'IA en fait des fiches et des quiz, et l'application lui dit quoi réviser et quand.</p>
+      <p class="desc">Une application de révision pour les enfants, née d'un besoin dans ma famille. L'élève ou un parent prend le cours en photo ou colle le texte, l'IA en fait des fiches et des quiz, et l'application lui dit quoi réviser et quand. Aujourd'hui, <span class="num">4 enfants</span> de primaire et de collège l'utilisent avant chaque contrôle. Préparer les questions prend <span class="num">une minute</span> au lieu de 15 à 20.</p>
       <ul class="stages">
         <li class="done">Génération par LLM : fiches et quiz (QCM, vrai/faux, textes à trous) en sortie structurée</li>
         <li class="done">RAG : l'IA s'appuie sur les cours de l'élève, pas sur ce qu'elle croit savoir</li>
@@ -243,6 +286,7 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
         <li class="done">Répétition espacée (FSRS) : chaque fiche revient juste avant d'être oubliée</li>
       </ul>
       <div class="stack">Python · FastAPI · React · PostgreSQL / PGVector · Docker · Railway</div>
+      <a class="repo" href="https://declic.up.railway.app/connexion" target="_blank" rel="noopener">Voir le site</a>
     </div>
     <figure class="diagram">
       <svg viewBox="0 0 420 384" role="img" aria-labelledby="dcT dcD">
@@ -279,13 +323,64 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
     </figure>
   </article>
 
+
+  <div class="line"></div>
+  <article class="row rise">
+    <div>
+      <h3>Vigie</h3>
+      <div class="role">Conception, développement, évaluation</div>
+      <p class="desc">Un agent IA qui enquête sur les alertes de dérive d'un modèle de scoring, comme le ferait un ingénieur d'astreinte. Il appelle des outils d'analyse, raisonne en plusieurs étapes et rédige un diagnostic. Pour savoir s'il est fiable, je l'évalue sur des pannes dont je connais la cause.</p>
+      <ul class="stages">
+        <li class="done">Agent LangGraph : raisonnement en plusieurs étapes</li>
+        <li class="done">Tool calling : l'agent choisit les analyses à lancer</li>
+        <li class="done">Évaluation sur des pannes à cause connue</li>
+        <li class="done">Traçabilité de chaque enquête avec Langfuse</li>
+      </ul>
+      <div class="stack">Python · LangGraph · LLM · Langfuse</div>
+      <a class="repo" href="https://vigie-production-fb4d.up.railway.app/#day_03" target="_blank" rel="noopener">Voir le site</a>
+    </div>
+    <figure class="diagram">
+      <svg viewBox="0 0 420 376" role="img" aria-labelledby="vgT vgD">
+        <title id="vgT">Fonctionnement de Vigie</title>
+        <desc id="vgD">Quatre étapes : une alerte de dérive arrive, l'agent LangGraph enquête en appelant des outils d'analyse, il rédige un diagnostic, et chaque enquête est tracée dans Langfuse. L'agent est évalué sur des pannes dont la cause est connue.</desc>
+        <line x1="40" y1="30" x2="40" y2="290" stroke="#000" stroke-width="1"/>
+        <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="9" fill="#E4341C" letter-spacing=".06em">
+          <text x="52" y="34">01</text><text x="52" y="104">02</text><text x="52" y="220">03</text><text x="52" y="294">04</text>
+        </g>
+        <circle cx="40" cy="30" r="5" fill="#FAFAF8" stroke="#000" stroke-width="1.2"/>
+        <circle cx="40" cy="100" r="5" fill="#FAFAF8" stroke="#000" stroke-width="1.2"/>
+        <circle cx="40" cy="216" r="5" fill="#FAFAF8" stroke="#000" stroke-width="1.2"/>
+        <circle cx="40" cy="290" r="6" fill="#E4341C"/>
+        <g font-family="Archivo, Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#000">
+          <text x="72" y="34">Alerte de dérive</text><text x="72" y="104">Enquête (LangGraph)</text>
+          <text x="72" y="220">Diagnostic</text><text x="72" y="294">Traçabilité</text>
+        </g>
+        <g font-family="Archivo, Helvetica, Arial, sans-serif" font-size="12" fill="#6B6B6B">
+          <text x="72" y="53">Les données d'un modèle de scoring changent.</text>
+          <text x="72" y="123">L'agent choisit ses outils et raisonne par étapes.</text>
+          <text x="72" y="239">Cause probable et recommandation, en clair.</text>
+          <text x="72" y="313">Chaque enquête est tracée dans Langfuse.</text>
+        </g>
+        <rect x="72" y="138" width="330" height="40" fill="none" stroke="#000" stroke-width="1"/>
+        <text x="82" y="153" font-family="JetBrains Mono, ui-monospace, monospace" font-size="9" fill="#6B6B6B" letter-spacing=".06em">TOOL CALLING</text>
+        <text x="82" y="169" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="11.5" fill="#000">Outils d'analyse appelés par l'agent selon ses hypothèses</text>
+        <rect x="72" y="326" width="330" height="40" fill="none" stroke="#E4341C" stroke-width="1" stroke-dasharray="3 3"/>
+        <text x="82" y="341" font-family="JetBrains Mono, ui-monospace, monospace" font-size="9" fill="#E4341C" letter-spacing=".06em">ÉVALUATION</text>
+        <text x="82" y="357" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="11.5" fill="#000">Testé sur des pannes dont la cause est connue</text>
+      </svg>
+      <figcaption>Fonctionnement de Vigie, de l'alerte au diagnostic</figcaption>
+    </figure>
+  </article>
+
+
+
   <div class="line"></div>
   <article class="row rise">
     <div>
       <h3>Sentinel</h3>
       <div class="role">Conception, développement full-stack</div>
       <p class="desc">Un outil de veille d'actualités par zone géographique. Les articles sont récupérés automatiquement, un LLM les localise, et on peut ensuite poser des questions dessus en langage normal au lieu de chercher par mots-clés.</p>
-      <div class="stack">Go · React · PostgreSQL / PGVector · Docker · RAG · Ollama</div>
+      <div class="stack">Go · React · PostgreSQL / PGVector · Docker</div>
       <a class="repo" href="https://github.com/teddyandria/sentinel">Voir le dépôt</a>
     </div>
     <figure class="shot">
@@ -294,12 +389,15 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
     </figure>
   </article>
 
+
+
   <div class="line"></div>
   <article class="row rise">
     <div>
       <h3>Script&nbsp;Extraction</h3>
       <div class="role">Mémoire de fin d'études — Floa</div>
       <p class="desc">Retracer d'où vient chaque variable d'un modèle de scoring, colonne par colonne. C'est une obligation d'audit en banque, et ça se faisait à la main : <span class="num">une demi-journée</span> à chaque mise à jour de modèle, pour <span class="num">une dizaine</span> de Data Scientists.</p>
+      <p class="desc"><strong>Pourquoi un script et pas un LLM :</strong> ce document justifie un modèle de crédit auprès du régulateur. Le lineage est déjà écrit dans le projet, il suffit de le suivre. Un script donne la même réponse à chaque fois et échoue clairement quand il se trompe ; un LLM se tromperait sans que personne ne le voie.</p>
       <div class="stack">Python · Dataiku</div>
     </div>
     <figure class="diagram">
@@ -347,8 +445,9 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
 
 <section id="experience">
   <div class="line"></div>
-  <span class="secnum">02 / EXPÉRIENCE</span>
+  <span class="secnum">03 / EXPÉRIENCE</span>
   <h2 class="head">Floa — Data Technology &amp; IA</h2>
+  <p class="job-meta">Machine Learning Engineer · Groupe BNP Paribas · Bordeaux · sept. 2024 – sept. 2026</p>
 
   <div class="line"></div>
   <div class="row rise">
@@ -383,26 +482,33 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
 
 <section>
   <div class="line"></div>
-  <span class="secnum">03 / EXPÉRIENCE</span>
-  <h2 class="head">The Kub — Développeur API &amp; Backend</h2>
+  <span class="secnum">04 / EXPÉRIENCE</span>
+  <h2 class="head">The Kub — Développeur Full Stack</h2>
+  <p class="job-meta">Agence digitale · Bordeaux · févr. 2023 – mars 2024</p>
 
   <div class="line"></div>
   <div class="row rise">
-    <div><h3>Architecture &amp; APIs REST</h3></div>
-    <div><p class="desc" style="margin-top:0">Des APIs REST sous FastAPI, du traitement asynchrone, et pas mal de refactoring de backend pour gagner en temps de réponse. C'est là que j'ai appris à écrire du code qui tourne ailleurs que sur ma machine.</p></div>
+    <div><h3>Applications clients</h3></div>
+    <div><p class="desc" style="margin-top:0">Des applications web pour les clients de l'agence, du besoin à la livraison : APIs REST en Node.js / TypeScript et interfaces React. Par exemple une plateforme de réservation avec paiement Stripe, ou la recherche de biens d'une agence immobilière avec son back-office. C'est là que j'ai appris à écrire du code qui tourne ailleurs que sur ma machine.</p></div>
+  </div>
+
+  <div class="line"></div>
+  <div class="row rise">
+    <div><h3>Modernisation</h3></div>
+    <div><p class="desc" style="margin-top:0">Passage du framework maison de l'agence, basé sur WordPress, à React. Traitements asynchrones et refactoring du backend.</p></div>
   </div>
 </section>
 
 <section>
   <div class="line"></div>
-  <span class="secnum">04 / COMPÉTENCES</span>
+  <span class="secnum">05 / COMPÉTENCES</span>
   <h2 class="head">Compétences</h2>
-  <p class="skills rise">MLOps, LLM, RAG, Python, FastAPI, Docker, CI/CD, Airflow, Dataiku, SQL, Snowflake, PostgreSQL / PGVector, React, Go</p>
+  <p class="skills rise">Agents IA, LangGraph, LLM, RAG, Évaluation, Langfuse, MLOps, Python, FastAPI, TypeScript, Node.js, React, Docker, CI/CD, Airflow, Dataiku, SQL, Snowflake, PostgreSQL / PGVector, Go</p>
 </section>
 
 <section>
   <div class="line"></div>
-  <span class="secnum">05 / FORMATION</span>
+  <span class="secnum">06 / FORMATION</span>
   <h2 class="head">Formation</h2>
   <div class="formation rise">
     <div>
@@ -428,7 +534,7 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
 
 <section id="contact" class="contact">
   <div class="line"></div>
-  <span class="secnum">06 / CONTACT</span>
+  <span class="secnum">07 / CONTACT</span>
   <h2 class="head">Contact</h2>
   <ul>
     <li><a href="mailto:teddy.andriamam@gmail.com">teddy.andriamam@gmail.com</a></li>
@@ -440,7 +546,7 @@ footer{padding:clamp(1.4rem,3vw,2.4rem) 0 clamp(2.4rem,5vw,3.5rem);
 
 <div class="line"></div>
 <footer>
-  <span>Teddy Andriamampionona — AI / ML Engineer</span>
+  <span>Teddy Andriamampionona — AI Engineer</span>
   <span>Bordeaux &amp; Paris · Disponible immédiatement</span>
 </footer>
 
